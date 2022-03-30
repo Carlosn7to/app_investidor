@@ -14,5 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return "Você está aqui";
 });
+
+Route::get('/', [\App\Http\Controllers\WebController::class, "index"])->name("web.login");
