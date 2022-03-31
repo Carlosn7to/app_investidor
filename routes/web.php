@@ -13,8 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return "Você está aqui";
-});
-
 Route::get('/', [\App\Http\Controllers\WebController::class, "index"])->name("web.login");
+Route::post('/', [\App\Http\Controllers\AuthenticController::class, 'login'])->name('authentic.login');
+
+Route::middleware(\App\Http\Middleware\Authentic::class)->prefix('/app')->group(function(){
+    Route::get('/', [\App\Http\Controllers\HomeController::class, "index"])->name('app.index');
+});

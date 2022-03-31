@@ -5376,9 +5376,16 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "Login",
-  props: [],
+  props: ['_token', 'page_authentic'],
   methods: {},
   data: function data() {
     return {};
@@ -27999,16 +28006,45 @@ var render = function () {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div", { staticClass: "container-login df wh100" }, [
+    _c("div", { staticClass: "card-login df" }, [
+      _c(
+        "form",
+        {
+          staticClass: "wh100%",
+          attrs: { action: _vm.page_authentic, method: "POST" },
+        },
+        [
+          _c("input", {
+            attrs: { type: "hidden", name: "_token" },
+            domProps: { value: _vm._token },
+          }),
+          _vm._v(" "),
+          _c("label", { attrs: { for: "email" } }, [_vm._v("Login:")]),
+          _c("br"),
+          _vm._v(" "),
+          _c("input", { attrs: { type: "text", name: "email", id: "email" } }),
+          _c("br"),
+          _c("br"),
+          _c("br"),
+          _vm._v(" "),
+          _c("label", { attrs: { for: "password" } }, [_vm._v("Senha:")]),
+          _c("br"),
+          _vm._v(" "),
+          _c("input", {
+            attrs: { type: "password", name: "password", id: "password" },
+          }),
+          _c("br"),
+          _vm._v(" "),
+          _c("button", { staticClass: "df", attrs: { type: "submit" } }, [
+            _vm._v("Enviar"),
+          ]),
+        ]
+      ),
+    ]),
+  ])
 }
-var staticRenderFns = [
-  function () {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", [_c("div", [_vm._v("\n        input\n    ")])])
-  },
-]
+var staticRenderFns = []
 render._withStripped = true
 
 

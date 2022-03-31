@@ -2,12 +2,23 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Users;
 use Illuminate\Http\Request;
 
 class AuthenticController extends Controller
 {
-    public function login()
+    public function login(Request $request, Users $users)
     {
-        return "login aprovado";
+        $result = $users::where('password', $request->input("password"))->first();
+
+        if(isset($result->email)) {
+            session_start();
+
+            $_SESSION['authentic'] = true;
+
+            return redirect()->route('app.index');
+        } else {
+            return redirect()->route('web.login');
+        }
     }
 }

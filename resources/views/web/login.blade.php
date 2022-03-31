@@ -4,6 +4,9 @@
 
 @section('content')
 
-    <login-component></login-component>
+    <login-component
+    _token="{{ @csrf_token() }}"
+    page_authetic="{{ route('authentic.login') }}"
+    ></login-component>
 
 @endsection

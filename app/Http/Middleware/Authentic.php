@@ -16,6 +16,12 @@ class Authentic
      */
     public function handle(Request $request, Closure $next)
     {
-        return $next($request);
+        session_start();
+
+        if($_SESSION['authentic'] == true) {
+            return $next($request);
+        } else {
+            return redirect()->route('web.login');
+        }
     }
 }
