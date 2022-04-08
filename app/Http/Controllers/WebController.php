@@ -8,6 +8,13 @@ class WebController extends Controller
 {
     public function index()
     {
-        return view("web.login");
+        session_start();
+
+        if(isset($_SESSION['authentic'])) {
+            return redirect()->route('app.index');
+        } else {
+            return view("web.login");
+        }
     }
+
 }

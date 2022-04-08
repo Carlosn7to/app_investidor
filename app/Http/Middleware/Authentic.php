@@ -18,7 +18,7 @@ class Authentic
     {
         session_start();
 
-        if($_SESSION['authentic'] == true) {
+        if(isset($_SESSION['authentic'])) {
             return $next($request);
         } else {
             return redirect()->route('web.login');

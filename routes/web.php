@@ -15,6 +15,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [\App\Http\Controllers\WebController::class, "index"])->name("web.login");
 Route::post('/', [\App\Http\Controllers\AuthenticController::class, 'login'])->name('authentic.login');
+Route::get('/logout', [\App\Http\Controllers\AuthenticController::class, 'logout'])->name('authentic.logout');
 
 Route::middleware(\App\Http\Middleware\Authentic::class)->prefix('/app')->group(function(){
     Route::get('/', [\App\Http\Controllers\HomeController::class, "index"])->name('app.index');

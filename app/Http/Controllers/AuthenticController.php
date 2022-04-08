@@ -21,4 +21,12 @@ class AuthenticController extends Controller
             return redirect()->route('web.login');
         }
     }
+
+    public function logout()
+    {
+        session_start();
+        session_destroy();
+
+        return redirect()->route('web.login');
+    }
 }

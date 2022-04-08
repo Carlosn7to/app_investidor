@@ -42,9 +42,31 @@ html {
     background-color: var(--background-padrao);
 }
 
+.container-login header {
+    width: 100vw;
+    height: 10vh;
+    background-color: #fff;
+    border-bottom: 1px solid #99999960;
+}
+
+.container-login main {
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    height: 80vh;
+    padding: 3vh 0;
+}
+
+.container-login footer {
+    width: 100vw;
+    height: 10vh;
+    background-color: #fff;
+    border-top: 1px solid #99999960
+}
+
 .card-login {
     width: 20vw;
-    height: 50vh;
+    height: 55vh;
     background-color: #fff;
     border: 1px solid #bcd0c770;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
@@ -77,4 +99,12 @@ html {
     padding: 8px;
     border-radius: 5px;
     border: 1px solid #99999990;
+}
+
+/*
+    HOME
+ */
+
+.container-home {
+    background-color: var(--background-padrao);
 }
